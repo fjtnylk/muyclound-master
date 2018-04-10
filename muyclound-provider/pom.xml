@@ -17,5 +17,11 @@
         <version>1.0.0</version>
     </parent>
 
-    <modules></modules>
+    <modules>
+        <module>muyclound-provider-gmc</module>
+        <module>muyclound-provider-imc</module>
+        <module>muyclound-provider-omc</module>
+        <module>muyclound-provider-pmc</module>
+        <module>muyclound-provider-umc</module>
+    </modules>
 </project>
