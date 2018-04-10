@@ -95,6 +95,22 @@
 
     <dependencyManagement>
         <dependencies>
+            <!--spring-->
+            <dependency>
+                <groupId>io.spring.platform</groupId>
+                <artifactId>platform-bom</artifactId>
+                <version>Brussels-SR7</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>Edgware.RELEASE</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
             <!--fast-dfs-->
             <dependency>
                 <groupId>net.oschina.zcx7878</groupId>
