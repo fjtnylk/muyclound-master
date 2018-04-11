@@ -20,5 +20,14 @@
     <modules>
         <module>muyclound-common-core</module>
         <module>muyclound-common-util</module>
+        <module>muyclound-common-config</module>
+        <module>muyclound-common-base</module>
     </modules>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+    </dependencies>
 </project>
