@@ -19,5 +19,6 @@
 
     <modules>
         <module>muyclound-common-core</module>
+        <module>muyclound-common-util</module>
     </modules>
 </project>
