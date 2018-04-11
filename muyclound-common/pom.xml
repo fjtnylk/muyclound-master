@@ -22,6 +22,7 @@
         <module>muyclound-common-util</module>
         <module>muyclound-common-config</module>
         <module>muyclound-common-base</module>
+        <module>muyclound-security-feign</module>
     </modules>
 
     <dependencies>

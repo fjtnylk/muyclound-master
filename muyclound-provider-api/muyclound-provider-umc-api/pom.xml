@@ -19,10 +19,9 @@
 
     <dependencies>
         <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.11</version>
-            <scope>test</scope>
+            <groupId>com.muyclound</groupId>
+            <artifactId>muyclound-common-util</artifactId>
+            <version>${project.parent.version}</version>
         </dependency>
     </dependencies>
 
