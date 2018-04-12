@@ -87,6 +87,8 @@
         <commons-lang3.version>3.4</commons-lang3.version>
         <!--lombok-->
         <lombok.version>1.16.20</lombok.version>
+        <!--orika-->
+        <orika.version>1.5.2</orika.version>
         <!--junit-->
         <junit.version>4.12</junit.version>
         <!--aspectj-->
@@ -250,6 +252,13 @@
                 <groupId>org.projectlombok</groupId>
                 <artifactId>lombok</artifactId>
                 <version>${lombok.version}</version>
+            </dependency>
+
+            <!--orika-->
+            <dependency>
+                <groupId>ma.glasnost.orika</groupId>
+                <artifactId>orika-core</artifactId>
+                <version>${orika.version}</version>
             </dependency>
 
             <!--aspectj-->

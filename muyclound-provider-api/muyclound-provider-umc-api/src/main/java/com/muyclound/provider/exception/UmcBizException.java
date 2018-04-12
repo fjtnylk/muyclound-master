@@ -1,0 +1,35 @@
+package com.muyclound.provider.exception;
+
+import com.muyclound.base.enums.ErrorCodeEnum;
+import com.muyclound.base.exception.BizException;
+import lombok.extern.slf4j.Slf4j;
+
+/**
+ * Created by yanglikai on 2018/4/11.
+ */
+@Slf4j
+public class UmcBizException extends BizException {
+
+  public UmcBizException() {
+  }
+
+  public UmcBizException(int code, String msgFormat, Object... args) {
+    super(code, msgFormat, args);
+    log.error("<== UmcBizException, code:" + this.code + ", message:" + super.getMessage());
+  }
+
+  public UmcBizException(int code, String msg) {
+    super(code, msg);
+    log.error("<== UmcBizException, code:" + this.code + ", message:" + super.getMessage());
+  }
+
+  public UmcBizException(ErrorCodeEnum codeEnum) {
+    super(codeEnum.code(), codeEnum.msg());
+    log.error("<== UmcBizException, code:" + this.code + ", message:" + super.getMessage());
+  }
+
+  public UmcBizException(ErrorCodeEnum codeEnum, Object... args) {
+    super(codeEnum, args);
+    log.error("<== UmcBizException, code:" + this.code + ", message:" + super.getMessage());
+  }
+}
