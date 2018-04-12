@@ -1,0 +1,17 @@
+spring:
+  profiles:
+    active: peer1
+  application:
+    name: @pom.artifactId@
+eureka:
+  server:
+    enable-self-preservation: false
+  instance:
+    hostname: peer1
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+        defaultZone: http://peer1/eureka,http://peer2/eureka,http://peer3/eureka
+server:
+  port: 8761
