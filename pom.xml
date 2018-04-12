@@ -27,6 +27,7 @@
         <module>muyclound-common</module>
         <module>muyclound-provider-api</module>
         <module>muyclound-provider</module>
+        <module>muyclound-consumer</module>
     </modules>
 
     <developers>
