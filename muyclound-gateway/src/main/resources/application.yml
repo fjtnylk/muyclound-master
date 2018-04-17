@@ -1,0 +1,49 @@
+spring:
+  application:
+    name: @pom.artifactId@
+eureka:
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://peer1:8761/eureka/,http://peer2:8762/eureka/,http://peer3:8763/eureka/
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${spring.cloud.client.ipAddress}:${server.port}
+
+zuul:
+  routes:
+    umc-route:
+      path: /umc/**
+      serviceId: muyclound-provider-umc
+      stripPrefix: true
+    omc-route:
+      path: /omc/**
+      serviceId: muyclound-provider-omc
+      stripPrefix: true
+    b2b-route:
+      path: /b2b/**
+      serviceId: muyclound-consumer-b2b
+      stripPrefix: true
+
+hystrix:
+  propagate:
+    request-attribute:
+      enabled: true
+  command:
+    default:
+      execution:
+        timeout:
+          enabled: true
+        isolation:
+          thread:
+            timeoutInMilliseconds: 20000
+
+ribbon:
+  eager-load:
+    enabled: true
+  MaxAutoRetries: 1
+  MaxAutoRetriesNextServer: 2
+  OkToRetryOnAllOperations: false
+  ConnectTimeout: 60000
+  ReadTimeout: 60000
