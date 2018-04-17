@@ -18,5 +18,10 @@
     </parent>
 
     <dependencies>
+        <dependency>
+            <groupId>com.muyclound</groupId>
+            <artifactId>muyclound-common-util</artifactId>
+            <version>${project.parent.version}</version>
+        </dependency>
     </dependencies>
 </project>

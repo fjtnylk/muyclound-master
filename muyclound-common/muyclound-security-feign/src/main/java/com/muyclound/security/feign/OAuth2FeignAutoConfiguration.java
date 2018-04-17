@@ -19,7 +19,7 @@ import org.springframework.security.oauth2.common.AuthenticationScheme;
 /**
  * Created by yanglikai on 2018/4/11.
  */
-@Configuration
+//@Configuration
 @EnableConfigurationProperties(Oauth2ClientProperties.class)
 public class OAuth2FeignAutoConfiguration {
   private final Oauth2ClientProperties oauth2ClientProperties;

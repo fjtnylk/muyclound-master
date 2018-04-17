@@ -5,8 +5,8 @@ import org.apache.commons.lang3.StringUtils;
 /**
  * Created by yanglikai on 2018/4/10.
  */
-public final class WrapperMapper {
-  private WrapperMapper() {
+public final class WrapMapper {
+  private WrapMapper() {
   }
 
   public static <E> Wrapper<E> wrap(int code, String message, E target) {

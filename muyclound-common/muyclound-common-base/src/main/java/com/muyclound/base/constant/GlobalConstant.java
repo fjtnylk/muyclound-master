@@ -4,7 +4,10 @@ package com.muyclound.base.constant;
  * Created by yanglikai on 2018/4/11.
  */
 public final class GlobalConstant {
-  public static final String ROOT_PREFIX = "paascloud";
+  public static final String ROOT_PREFIX = "muyclound";
+
+  public static final String UMC_PROVIDER = "muyclound-provider-umc";
+  public static final String OMC_PROVIDER = "muyclound-provider-omc";
 
   /**
    * 数值

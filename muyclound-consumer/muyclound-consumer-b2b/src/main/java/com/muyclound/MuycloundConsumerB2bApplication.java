@@ -10,9 +10,9 @@ import org.springframework.cloud.netflix.hystrix.EnableHystrix;
 @EnableHystrix
 @EnableFeignClients
 @EnableEurekaClient
-public class MuycloundProviderOmcApplication {
+public class MuycloundConsumerB2bApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(MuycloundProviderOmcApplication.class, args);
-	}
+  public static void main(String[] args) {
+    SpringApplication.run(MuycloundConsumerB2bApplication.class, args);
+  }
 }
