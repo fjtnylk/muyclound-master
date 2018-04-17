@@ -2,6 +2,7 @@ package com.muyclound.consumer.web;
 
 import com.muyclound.provider.service.OMCOrderFeignApi;
 import com.muyclound.provider.service.UMCMqMessageFeignApi;
+import com.muyclound.wrapper.WrapMapper;
 import com.muyclound.wrapper.Wrapper;
 import javax.annotation.Resource;
 import org.springframework.http.MediaType;
@@ -23,10 +24,10 @@ public class SimpleController {
 
   @GetMapping("/consumer")
   @ResponseBody
-  String consumer() {
+  Wrapper<String> consumer() {
     Wrapper<String> umcResult = umcMqMessageFeignApi.loadMessageKey("");
     Wrapper<String> omcResult = omcOrderFeignApi.loadOrderCode();
 
-    return "UMCResult:" + umcResult.getResult() + ", OMCResult:" + omcResult.getResult();
+    return WrapMapper.ok("UMCResult:" + umcResult.getResult() + ", OMCResult:" + omcResult.getResult());
   }
 }
