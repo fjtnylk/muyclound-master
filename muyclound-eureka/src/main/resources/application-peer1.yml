@@ -12,8 +12,8 @@ eureka:
     hostname: peer1
     lease-renewal-interval-in-seconds: 5
     prefer-ip-address: true
-    appname: muyclound-eureka
     lease-expiration-duration-in-seconds: 5
+    instance-id: ${spring.application.name}:${spring.cloud.client.ipAddress}:${server.port}
   client:
     registerWithEureka: true
     fetchRegistry: true
