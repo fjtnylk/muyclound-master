@@ -1,0 +1,13 @@
+package com.muyclound.provider.query;
+
+import java.io.Serializable;
+import lombok.Data;
+
+/**
+ * Created by yanglikai on 2018/4/18.
+ */
+@Data
+public class AuthPasswordQuery implements Serializable {
+  private String userName;
+  private String password;
+}

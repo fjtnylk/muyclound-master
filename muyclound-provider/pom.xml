@@ -23,6 +23,7 @@
         <module>muyclound-provider-omc</module>
         <module>muyclound-provider-pmc</module>
         <module>muyclound-provider-umc</module>
+        <module>muyclound-provider-amc</module>
     </modules>
 
     <dependencies>

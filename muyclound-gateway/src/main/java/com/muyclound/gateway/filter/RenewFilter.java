@@ -22,8 +22,8 @@ import org.springframework.stereotype.Component;
 @Slf4j
 public class RenewFilter extends ZuulFilter {
 
-  //@Resource
-  //private JwtTokenStore jwtTokenStore;
+  @Resource
+  private JwtTokenStore jwtTokenStore;
   private static final int EXPIRES_IN = 60 * 20;
 
   /**
@@ -82,8 +82,7 @@ public class RenewFilter extends ZuulFilter {
       return;
     }
 
-    //OAuth2AccessToken oAuth2AccessToken = jwtTokenStore.readAccessToken(token);
-    OAuth2AccessToken oAuth2AccessToken = new DefaultOAuth2AccessToken("yanglikai");
+    OAuth2AccessToken oAuth2AccessToken = jwtTokenStore.readAccessToken(token);
     int expiresIn = oAuth2AccessToken.getExpiresIn();
 
     if (expiresIn < EXPIRES_IN) {

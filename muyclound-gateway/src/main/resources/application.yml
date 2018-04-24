@@ -15,14 +15,17 @@ zuul:
   routes:
     umc-route:
       path: /umc/**
+      sensitiveHeaders:
       serviceId: muyclound-provider-umc
       stripPrefix: true
     omc-route:
       path: /omc/**
+      sensitiveHeaders:
       serviceId: muyclound-provider-omc
       stripPrefix: true
     b2b-route:
       path: /b2b/**
+      sensitiveHeaders:
       serviceId: muyclound-consumer-b2b
       stripPrefix: true
 

@@ -1,0 +1,15 @@
+spring:
+  cloud:
+    inetutils:
+      ignoredInterfaces:
+        - docker0
+        - veth.*
+        - VM.*
+      preferredNetworks:
+        - 192.168
+security:
+  basic:
+    enabled: false
+  user:
+    name: root
+    password: root
