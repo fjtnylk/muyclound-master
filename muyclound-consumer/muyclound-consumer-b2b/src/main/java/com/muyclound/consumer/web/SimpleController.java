@@ -1,10 +1,13 @@
 package com.muyclound.consumer.web;
 
+import com.muyclound.dc.enums.EventEnum;
+import com.muyclound.dc.wrapper.DCWrapper;
 import com.muyclound.provider.service.OMCOrderFeignApi;
 import com.muyclound.provider.service.UMCMqMessageFeignApi;
 import com.muyclound.wrapper.WrapMapper;
 import com.muyclound.wrapper.Wrapper;
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -29,5 +32,12 @@ public class SimpleController {
     Wrapper<String> omcResult = omcOrderFeignApi.loadOrderCode();
 
     return WrapMapper.ok("UMCResult:" + umcResult.getResult() + ", OMCResult:" + omcResult.getResult());
+  }
+
+  @GetMapping("/log")
+  @ResponseBody
+  public Wrapper<String> log(HttpServletRequest request) {
+    DCWrapper.log(EventEnum.CLICK, request);
+    return WrapMapper.ok();
   }
 }

@@ -17,7 +17,7 @@ import lombok.NoArgsConstructor;
 public final class JSONUtil {
   private static final ObjectMapper OBJECT_MAPPER = new ObjectMapper();
 
-  public static String toJson(Object object) {
+  public static String toJSON(Object object) {
     try {
       return OBJECT_MAPPER.writeValueAsString(object);
     } catch (JsonProcessingException e) {
