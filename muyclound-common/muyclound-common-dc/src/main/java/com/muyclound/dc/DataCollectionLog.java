@@ -32,11 +32,11 @@ public class DataCollectionLog implements InitializingBean {
     RollingFileAppender appender = new RollingFileAppender();
     appender.setContext(loggerContext);
     appender.setName(DCConstant.DC_NAME);
-    appender.setFile(DCConstant.LOGGER_HOME + "/" + appname + "/DC/datacollect.log");
+    appender.setFile(String.format(DCConstant.FILE, appname));
 
     TimeBasedRollingPolicy rollingPolicy = new TimeBasedRollingPolicy();
-    rollingPolicy.setFileNamePattern(DCConstant.LOGGER_HOME + "/" + appname + "/DC/datacollect.%d{yyyyMMdd}.log");
-    rollingPolicy.setMaxHistory(30);
+    rollingPolicy.setFileNamePattern(String.format(DCConstant.FILE_DIRECTORY, appname) + DCConstant.FILE_NAME_PATTERN);
+    rollingPolicy.setMaxHistory(DCConstant.MAX_HISTORY);
     rollingPolicy.setParent(appender);
     rollingPolicy.setContext(loggerContext);
     rollingPolicy.start();
