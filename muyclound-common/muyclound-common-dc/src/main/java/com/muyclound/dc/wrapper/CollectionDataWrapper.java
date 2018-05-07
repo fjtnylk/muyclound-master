@@ -10,7 +10,7 @@ import com.muyclound.dc.config.SessionConfig;
 import com.muyclound.dc.config.UserConfig;
 import com.muyclound.dc.enums.EventEnum;
 import com.muyclound.dc.enums.LogLevelEnum;
-import com.muyclound.json.JSONUtil;
+import com.muyclound.util.json.JSONUtil;
 import java.util.Objects;
 
 /**

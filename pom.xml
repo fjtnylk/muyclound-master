@@ -96,6 +96,8 @@
         <aspectj.version>1.8.9</aspectj.version>
         <!--javax-validation-->
         <javax-validation.version>2.0.1.Final</javax-validation.version>
+        <!--poi-->
+        <poi.version>3.17</poi.version>
     </properties>
 
     <dependencyManagement>
@@ -279,6 +281,28 @@
                 <groupId>javax.validation</groupId>
                 <artifactId>validation-api</artifactId>
                 <version>${javax-validation.version}</version>
+            </dependency>
+
+            <!--poi-->
+            <dependency>
+                <groupId>org.apache.poi</groupId>
+                <artifactId>poi</artifactId>
+                <version>${poi.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.poi</groupId>
+                <artifactId>poi-ooxml</artifactId>
+                <version>${poi.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.poi</groupId>
+                <artifactId>poi-ooxml-schemas</artifactId>
+                <version>${poi.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.poi</groupId>
+                <artifactId>poi-scratchpad</artifactId>
+                <version>${poi.version}</version>
             </dependency>
 
             <!--junit-->
