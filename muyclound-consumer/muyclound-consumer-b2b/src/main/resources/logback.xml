@@ -34,7 +34,7 @@
         </encoder>
     </appender>
 
-    <logger name="com.muyclound" level="ERROR">
+    <logger name="com.muyclound" level="INFO">
         <appender-ref ref="STDOUT"/>
         <appender-ref ref="FILE"/>
     </logger>
@@ -69,7 +69,7 @@
         <appender-ref ref="FILE"/>
     </logger>
 
-    <root level="DEBUG">
+    <root level="INFO">
         <appender-ref ref="STDOUT"/>
         <appender-ref ref="FILE"/>
     </root>

@@ -19,4 +19,14 @@ public class ConsumerService {
     Wrapper<String> result = umcMqMessageFeignApi.loadMessageKey(key);
     return result.getResult();
   }
+
+  public String error() {
+    throw new RuntimeException("异常错误请求");
+  }
+
+  public String info() {
+    log.info("consumer-service:" + "info");
+    log.error("consumer-service:" + "error");
+    return "";
+  }
 }

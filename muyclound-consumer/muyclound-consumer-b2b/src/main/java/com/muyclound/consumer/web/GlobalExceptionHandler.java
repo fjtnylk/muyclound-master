@@ -71,7 +71,7 @@ public class GlobalExceptionHandler {
   @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
   @ResponseBody
   public Wrapper exception(Exception e) {
-    log.info("保存全局异常信息 ex={}", e.getMessage(), e);
+    log.error("全局异常={}", e.getMessage(), e);
     return WrapMapper.error();
   }
 }
