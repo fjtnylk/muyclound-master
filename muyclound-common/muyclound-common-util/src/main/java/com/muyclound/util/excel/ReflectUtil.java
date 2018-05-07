@@ -6,7 +6,7 @@ import java.lang.reflect.Modifier;
 /**
  * Created by yanglikai on 2018/5/6.
  */
-public final class ReflectUtils {
+public final class ReflectUtil {
 
   public static void setFieldValue(final Object obj, final String fieldName, final Object value) {
     Field field = getAccessibleField(obj, fieldName);

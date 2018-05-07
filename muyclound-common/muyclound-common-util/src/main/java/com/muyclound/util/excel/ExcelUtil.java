@@ -34,7 +34,7 @@ import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 /**
  * Created by yanglikai on 2018/5/6.
  */
-public final class ExcelUtils {
+public final class ExcelUtil {
 
   public static <T> List<T> read(final HttpServletRequest request, final Class target) {
     List<MultipartFile> multipartFiles = getMultipartFile(request);
@@ -108,7 +108,7 @@ public final class ExcelUtils {
           Object value = obtainCellValue(typeName, cell);
 
           /* 字段赋值 */
-          ReflectUtils.setFieldValue(obj, importField.name(), value);
+          ReflectUtil.setFieldValue(obj, importField.name(), value);
         }
 
         list.add(obj);
