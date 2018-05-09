@@ -25,6 +25,7 @@
         <module>muyclound-security-feign</module>
         <module>muyclound-security-core</module>
         <module>muyclound-common-dc</module>
+        <module>muyclound-common-external</module>
     </modules>
 
     <dependencies>
