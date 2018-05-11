@@ -7,7 +7,9 @@ import lombok.Data;
  */
 @Data
 public class QiniuProperties {
+
   private QiniuKeyProperties key = new QiniuKeyProperties();
+
   private QiniuOssProperties oss = new QiniuOssProperties();
 
   @Data
