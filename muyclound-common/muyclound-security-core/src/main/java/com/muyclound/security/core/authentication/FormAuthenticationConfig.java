@@ -8,10 +8,12 @@ import org.springframework.security.web.authentication.AuthenticationSuccessHand
 import org.springframework.stereotype.Component;
 
 /**
+ * 表单登录配置
  * Created by yanglikai on 2018/4/18.
  */
 @Component
 public class FormAuthenticationConfig {
+
   protected final AuthenticationSuccessHandler authenticationSuccessHandler;
 
   protected final AuthenticationFailureHandler authenticationFailureHandler;

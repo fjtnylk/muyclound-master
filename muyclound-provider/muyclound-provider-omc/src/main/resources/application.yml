@@ -17,10 +17,12 @@ feign:
 
 muyclound:
   oauth2:
+    jwtSigningKey: muyclound
     client:
       id: ${security.oauth2.resource.id}
       accessTokenUrl: ${security.oauth2.client.access-token-uri}
       clientId: ${security.oauth2.client.clientId}
       clientSecret: ${security.oauth2.client.clientSecret}
       clientAuthenticationScheme: header
+      tokenStore: jwt
 

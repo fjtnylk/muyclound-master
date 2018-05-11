@@ -18,8 +18,9 @@ public class PCAuthorizeConfigProvider implements AuthorizeConfigProvider {
     config.antMatchers(SecurityConstants.DEFAULT_UNAUTHENTICATION_URL,
         SecurityConstants.DEFAULT_SIGN_IN_PROCESSING_URL_MOBILE,
         SecurityConstants.DEFAULT_SIGN_IN_PROCESSING_URL_OPENID,
+        SecurityConstants.DEFAULT_SOCIAL_USER_INFO_URL,
         SecurityConstants.DEFAULT_VALIDATE_CODE_URL_PREFIX + "/*", "/pay/alipayCallback",
-        "/auth/**").permitAll();
+        "/auth/**","/druid/**", "/uac/auth/**", "/swagger-ui.html", "/swagger-resources/**", "/v2/api-docs").permitAll();
     return false;
   }
 }
