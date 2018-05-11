@@ -29,9 +29,10 @@
     <dependencies>
         <dependency>
             <groupId>com.muyclound</groupId>
-            <artifactId>muyclound-common-util</artifactId>
+            <artifactId>muyclound-common-core</artifactId>
             <version>${project.parent.version}</version>
         </dependency>
+
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>

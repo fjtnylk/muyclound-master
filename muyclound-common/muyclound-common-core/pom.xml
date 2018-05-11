@@ -25,14 +25,25 @@
         </dependency>
         <dependency>
             <groupId>com.muyclound</groupId>
+            <artifactId>muyclound-common-config</artifactId>
+            <version>${project.parent.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.muyclound</groupId>
             <artifactId>muyclound-common-util</artifactId>
             <version>${project.parent.version}</version>
         </dependency>
         <dependency>
             <groupId>com.muyclound</groupId>
-            <artifactId>muyclound-common-config</artifactId>
+            <artifactId>muyclound-common-dc</artifactId>
             <version>${project.parent.version}</version>
         </dependency>
+        <dependency>
+            <groupId>com.muyclound</groupId>
+            <artifactId>muyclound-common-external</artifactId>
+            <version>${project.parent.version}</version>
+        </dependency>
+
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-commons</artifactId>
