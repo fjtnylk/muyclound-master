@@ -1,7 +1,7 @@
 package com.muyclound.provider.web.admin;
 
 import com.muyclound.dc.enums.EventEnum;
-import com.muyclound.dc.wrapper.DCWrapper;
+import com.muyclound.dc.wrapper.LogWrapper;
 import com.muyclound.provider.service.SimpleService;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
@@ -29,7 +29,7 @@ public class OrderController {
 
   @GetMapping(value = "/order/log")
   public String log(HttpServletRequest request) {
-    DCWrapper.log(EventEnum.SHOW, request);
+    LogWrapper.collection(EventEnum.SHOW, request);
     return "ok";
   }
 }

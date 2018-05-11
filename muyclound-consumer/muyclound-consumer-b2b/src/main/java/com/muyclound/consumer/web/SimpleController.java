@@ -2,7 +2,7 @@ package com.muyclound.consumer.web;
 
 import com.muyclound.consumer.service.ConsumerService;
 import com.muyclound.dc.enums.EventEnum;
-import com.muyclound.dc.wrapper.DCWrapper;
+import com.muyclound.dc.wrapper.LogWrapper;
 import com.muyclound.provider.service.OMCOrderFeignApi;
 import com.muyclound.provider.service.UMCMqMessageFeignApi;
 import com.muyclound.wrapper.WrapMapper;
@@ -42,7 +42,7 @@ public class SimpleController {
   @GetMapping("/log")
   @ResponseBody
   public Wrapper<String> log(HttpServletRequest request) {
-    DCWrapper.log(EventEnum.CLICK, request);
+    LogWrapper.collection(EventEnum.CLICK, request);
     return WrapMapper.ok();
   }
 

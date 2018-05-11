@@ -13,21 +13,21 @@ import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 
 /**
- * 数据埋点包装类.
+ * 数据采集包装类.
  * Created by yanglikai on 2018/4/24.
  */
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
-public class DCWrapper {
+public class LogWrapper {
 
-  public static void log(EventEnum event, CollectionConfig config) {
+  public static void collection(EventEnum event, CollectionConfig config) {
     CollectionDataWrapper wrapper = new CollectionDataWrapper(new CollectionData());
     wrapper.config(event);
     wrapper.config(config);
 
-    log(wrapper);
+    collection(wrapper);
   }
 
-  public static void log(EventEnum event, HttpServletRequest request) {
+  public static void collection(EventEnum event, HttpServletRequest request) {
     CollectionDataWrapper wrapper = new CollectionDataWrapper(new CollectionData());
     wrapper.config(event);
     wrapper.config(new ProjectConfig());
@@ -35,10 +35,10 @@ public class DCWrapper {
     wrapper.config(new SessionConfig());
     wrapper.config(new RequestConfig(request));
 
-    log(wrapper);
+    collection(wrapper);
   }
 
-  private static void log(CollectionDataWrapper wrapper) {
+  private static void collection(CollectionDataWrapper wrapper) {
     DataCollectionLog.log(wrapper.data());
   }
 }
