@@ -24,7 +24,7 @@
         </dependency>
         <dependency>
             <groupId>com.muyclound</groupId>
-            <artifactId>muyclound-security-core</artifactId>
+            <artifactId>muyclound-security-app</artifactId>
             <version>${project.parent.version}</version>
         </dependency>
         <dependency>
