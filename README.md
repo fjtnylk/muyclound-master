@@ -1,11 +1,50 @@
-# muyclound-master
+#muyclound-master
 
-  #####muyclound-common	共通模块
-  #####muyclound-consumer	消费者模块
-  #####muyclound-discovery	配置中心模块
-  #####muyclound-eureka	注册中心模块
-  #####muyclound-gateway	网关模块
-  #####muyclound-monitor	监控模块
-  #####muyclound-provider	提供者模块
-  #####muyclound-provider-api	提供者接口模块
-  #####muyclound-zipkin	调用链追踪模块
+##端口规范
+  ###注册中心：
+    7100
+    多实例：
+      7101
+      7102
+      7103
+  ###API网关：
+    8100
+    多实例：
+      8101
+      8102
+      8103
+  ###微服务中心：
+    6000
+    用户中心 -> 6100
+      多实例：
+        6101
+        6102
+        6103
+    订单中心 -> 6200
+      多实例：
+        6201
+        6202
+        6203
+    商品中心 -> 6300
+      多实例：
+        6301
+        6302
+        6303
+    支付中心 -> 6500
+      多实例：
+        6501
+        6502
+        6503
+  ###应用中心：
+    9000
+    B2B -> 9100
+      多实例：
+        9101
+        9102
+        9103
+    S2B -> 9200
+      多实例：
+        9201
+        9202
+        9203
+    

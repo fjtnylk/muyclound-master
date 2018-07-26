@@ -24,6 +24,11 @@
         </dependency>
         <dependency>
             <groupId>com.muyclound</groupId>
+            <artifactId>muyclound-common-datasource</artifactId>
+            <version>${project.parent.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.muyclound</groupId>
             <artifactId>muyclound-provider-omc-api</artifactId>
             <version>${project.parent.version}</version>
         </dependency>

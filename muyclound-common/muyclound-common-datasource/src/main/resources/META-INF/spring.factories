@@ -1,0 +1,3 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.muyclound.datasource.ShardingAutoConfiguration,\
+com.muyclound.datasource.boot.MyBatisPlusAutoConfiguration

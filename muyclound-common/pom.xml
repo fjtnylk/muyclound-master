@@ -27,6 +27,7 @@
         <module>muyclound-common-dc</module>
         <module>muyclound-common-external</module>
         <module>muyclound-security-app</module>
+        <module>muyclound-common-datasource</module>
     </modules>
 
     <dependencies>
