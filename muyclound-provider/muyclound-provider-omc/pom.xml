@@ -32,11 +32,6 @@
             <artifactId>muyclound-provider-omc-api</artifactId>
             <version>${project.parent.version}</version>
         </dependency>
-        <dependency>
-            <groupId>com.muyclound</groupId>
-            <artifactId>muyclound-provider-umc-api</artifactId>
-            <version>${project.parent.version}</version>
-        </dependency>
 
         <dependency>
             <groupId>org.projectlombok</groupId>

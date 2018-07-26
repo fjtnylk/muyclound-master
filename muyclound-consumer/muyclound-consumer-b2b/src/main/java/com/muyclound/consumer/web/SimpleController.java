@@ -3,7 +3,6 @@ package com.muyclound.consumer.web;
 import com.muyclound.consumer.service.ConsumerService;
 import com.muyclound.dc.enums.EventEnum;
 import com.muyclound.dc.wrapper.LogWrapper;
-import com.muyclound.provider.service.OMCOrderFeignApi;
 import com.muyclound.provider.service.UMCMqMessageFeignApi;
 import com.muyclound.wrapper.WrapMapper;
 import com.muyclound.wrapper.Wrapper;
@@ -26,17 +25,14 @@ public class SimpleController {
   @Resource
   private UMCMqMessageFeignApi umcMqMessageFeignApi;
   @Resource
-  private OMCOrderFeignApi omcOrderFeignApi;
-  @Resource
   private ConsumerService consumerService;
 
   @GetMapping("/consumer")
   @ResponseBody
   Wrapper<String> consumer() {
     Wrapper<String> umcResult = umcMqMessageFeignApi.loadMessageKey("");
-    Wrapper<String> omcResult = omcOrderFeignApi.loadOrderCode();
 
-    return WrapMapper.ok("UMCResult:" + umcResult.getResult() + ", OMCResult:" + omcResult.getResult());
+    return WrapMapper.ok("UMCResult:" + umcResult.getResult());
   }
 
   @GetMapping("/log")

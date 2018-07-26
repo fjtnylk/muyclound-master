@@ -9,8 +9,4 @@ import org.springframework.stereotype.Component;
  */
 @Component
 public class OMCOrderApiHystrix implements OMCOrderFeignApi {
-  @Override
-  public Wrapper<String> loadOrderCode() {
-    return null;
-  }
 }
