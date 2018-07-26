@@ -3,6 +3,7 @@ package com.muyclound.provider.model.entity;
 import com.baomidou.mybatisplus.annotations.TableField;
 import com.baomidou.mybatisplus.annotations.TableId;
 import com.baomidou.mybatisplus.annotations.TableName;
+import com.muyclound.model.MUYObject;
 import java.io.Serializable;
 import java.util.Date;
 import lombok.Data;
@@ -12,7 +13,7 @@ import lombok.Data;
  */
 @Data
 @TableName(value = "my_order_item")
-public class OrderItemDO implements Serializable {
+public class OrderItemDO extends MUYObject {
   @TableId
   private Long id;                // 主键
   @TableField(value = "order_code")

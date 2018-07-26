@@ -7,9 +7,9 @@ import org.springframework.cloud.netflix.feign.EnableFeignClients;
 import org.springframework.cloud.netflix.hystrix.EnableHystrix;
 
 @SpringBootApplication
-@EnableHystrix
-@EnableFeignClients
-@EnableEurekaClient
+//@EnableHystrix
+//@EnableFeignClients
+//@EnableEurekaClient
 public class MuycloundProviderOmcApplication {
 
 	public static void main(String[] args) {

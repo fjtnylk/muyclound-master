@@ -5,6 +5,7 @@ import com.muyclound.util.mapper.annotation.MapperSource;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 import ma.glasnost.orika.BoundMapperFacade;
@@ -24,6 +25,8 @@ public final class MapperUtil {
   }
 
   public static <T> List<T> map(List source, Class<T> target) {
+    Objects.requireNonNull(source, "source must be not null");
+
     List<T> list = new ArrayList<>(source.size());
 
     for (Object o : source) {
@@ -36,6 +39,8 @@ public final class MapperUtil {
   }
 
   public static <T> T map(Object source, Class<T> target) {
+    Objects.requireNonNull(source, "source must be not null");
+
     MapperSource mapperSource = target.getAnnotation(MapperSource.class);
     Class sourceClass;
     if (mapperSource == null) {
@@ -53,7 +58,13 @@ public final class MapperUtil {
         continue;
       }
 
-      classMapBuilder.field(mapperProperty.value(), field.getName());
+      for (String el : mapperProperty.value()) {
+        if (findField(sourceClass, el) == null) {
+          continue;
+        }
+
+        classMapBuilder.field(el, field.getName());
+      }
     }
 
     classMapBuilder.byDefault().register();
@@ -61,5 +72,15 @@ public final class MapperUtil {
     BoundMapperFacade mapperFacade = mapperFactory.getMapperFacade(sourceClass, target);
     T result = (T) mapperFacade.map(source);
     return result;
+  }
+
+  private static Field findField(Class clazz, String fieldName) {
+    for (Field field : clazz.getDeclaredFields()) {
+      if (field.getName().equals(fieldName)) {
+        return field;
+      }
+    }
+
+    return null;
   }
 }

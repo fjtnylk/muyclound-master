@@ -101,6 +101,8 @@
         <javax-validation.version>2.0.1.Final</javax-validation.version>
         <!--poi-->
         <poi.version>3.17</poi.version>
+        <!--joda-->
+        <joda-time.version>2.9.9</joda-time.version>
     </properties>
 
     <dependencyManagement>
@@ -311,6 +313,13 @@
                 <groupId>org.apache.poi</groupId>
                 <artifactId>poi-scratchpad</artifactId>
                 <version>${poi.version}</version>
+            </dependency>
+
+            <!--joda-->
+            <dependency>
+                <groupId>joda-time</groupId>
+                <artifactId>joda-time</artifactId>
+                <version>${joda-time.version}</version>
             </dependency>
 
             <!--junit-->

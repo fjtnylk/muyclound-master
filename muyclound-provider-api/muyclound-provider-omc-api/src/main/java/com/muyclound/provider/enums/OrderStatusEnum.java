@@ -5,6 +5,7 @@ package com.muyclound.provider.enums;
  */
 public enum OrderStatusEnum {
   CREATE(10, "创建"),
+  CANCEL(90, "取消"),
   ;
 
   public int code;
