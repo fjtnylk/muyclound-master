@@ -4,9 +4,9 @@
 DROP TABLE IF EXISTS `my_goods`;
 CREATE TABLE `my_goods` (
   `id` bigint(20) NOT NULL DEFAULT '0' COMMENT '主键',
-  `code` varchar(12) NOT NULL DEFAULT '' COMMENT '商品编码',
-  `name` varchar(64) DEFAULT '' COMMENT '商品名称',
-  `type` tinyint(2) DEFAULT '0' COMMENT '商品类型(10-普通商品、20-促销商品)',
+  `goods_code` varchar(12) NOT NULL DEFAULT '' COMMENT '商品编码',
+  `goods_name` varchar(64) DEFAULT '' COMMENT '商品名称',
+  `goods_type` tinyint(2) DEFAULT '0' COMMENT '商品类型(10-普通商品、20-促销商品)',
   `status` tinyint(1) DEFAULT '0' COMMENT '商品状态(0-上架、1-下架)',
   `spec` varchar(12) DEFAULT '' COMMENT '规格',
   `unit` varchar(6) DEFAULT '' COMMENT '单位',
@@ -22,8 +22,8 @@ CREATE TABLE `my_goods` (
 DROP TABLE IF EXISTS `my_goods_class`;
 CREATE TABLE `my_goods_class` (
   `id` bigint(20) NOT NULL DEFAULT '0' COMMENT '主键',
-  `code` varchar(6) NOT NULL DEFAULT '' COMMENT '分类编码',
-  `name` varchar(32) DEFAULT '' COMMENT '分类名称',
+  `g_class_code` varchar(6) NOT NULL DEFAULT '' COMMENT '分类编码',
+  `g_class_name` varchar(32) DEFAULT '' COMMENT '分类名称',
   `level` tinyint(1) NOT NULL DEFAULT '0' COMMENT '分类级别',
   `p_code` varchar(8) DEFAULT '' COMMENT '父分类',
   `sort` tinyint(1) DEFAULT '0' COMMENT '顺序',
