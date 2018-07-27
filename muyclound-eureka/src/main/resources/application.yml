@@ -13,7 +13,7 @@ eureka:
     registerWithEureka: false
     fetchRegistry: false
     serviceUrl:
-        defaultZone: http://root:root@peer2:7002/eureka/,http://root:root@peer3:7003/eureka/
+        defaultZone: http://root:root@peer2:7102/eureka/,http://root:root@peer3:7103/eureka/
 server:
   port: 0
 
@@ -32,7 +32,7 @@ eureka:
     registerWithEureka: false
     fetchRegistry: false
     serviceUrl:
-        defaultZone: http://root:root@peer1:7001/eureka/,http://root:root@peer3:7003/eureka/
+        defaultZone: http://root:root@peer1:7101/eureka/,http://root:root@peer3:7103/eureka/
 
 ---
 spring:
@@ -49,4 +49,4 @@ eureka:
     registerWithEureka: false
     fetchRegistry: false
     serviceUrl:
-        defaultZone: http://root:root@peer1:7001/eureka/,http://root:root@peer2:7002/eureka/
+        defaultZone: http://root:root@peer1:7101/eureka/,http://root:root@peer2:7102/eureka/

@@ -18,6 +18,6 @@ eureka:
     registerWithEureka: true
     fetchRegistry: true
     serviceUrl:
-        defaultZone: http://peer2:7002/eureka/,http://peer3:7003/eureka/
+        defaultZone: http://peer2:7102/eureka/,http://peer3:7103/eureka/
 server:
   port: 7001
