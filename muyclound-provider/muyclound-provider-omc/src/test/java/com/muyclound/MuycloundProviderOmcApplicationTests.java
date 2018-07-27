@@ -30,7 +30,7 @@ public class MuycloundProviderOmcApplicationTests {
 		model.setOrderStatus(OrderStatusEnum.CREATE);
 		model.setOrderChannel(OrderChannelEnum.B2B);
 		model.setOrderType(OrderTypeEnum.NORMAL);
-		model.setTotalAmount(12);
+		model.setTotalAmount(new BigDecimal(12.25));
 
 		OrderDO orderDO = orderService.createOrder(model);
 

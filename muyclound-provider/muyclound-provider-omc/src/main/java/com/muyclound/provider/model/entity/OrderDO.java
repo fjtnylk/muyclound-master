@@ -9,7 +9,6 @@ import java.util.Date;
 import lombok.Builder;
 import lombok.Data;
 import org.apache.commons.lang3.RandomStringUtils;
-import org.apache.commons.lang3.RandomUtils;
 import org.joda.time.DateTime;
 
 /**
@@ -54,13 +53,5 @@ public class OrderDO extends MUYObject {
     String serial = String.valueOf(new DateTime().getMillisOfDay());
 
     return date.concat(biz).concat(random).concat(serial);
-  }
-
-  public Integer getTotalAmount() {
-    return totalAmount / 100;
-  }
-
-  public void setTotalAmount(Integer totalAmount) {
-    this.totalAmount = totalAmount * 100;
   }
 }

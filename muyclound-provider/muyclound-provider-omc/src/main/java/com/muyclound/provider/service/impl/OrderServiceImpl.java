@@ -9,6 +9,7 @@ import com.muyclound.provider.model.PlaceOrderModel;
 import com.muyclound.provider.model.entity.OrderDO;
 import com.muyclound.provider.repository.OrderRepository;
 import com.muyclound.provider.service.OrderService;
+import java.math.BigDecimal;
 import java.util.Date;
 import javax.annotation.Resource;
 import org.joda.time.DateTime;
@@ -39,7 +40,7 @@ public class OrderServiceImpl implements OrderService {
             .orderStatus(target.getOrderStatus().code)
             .orderChannel(target.getOrderChannel().code)
             .orderType(target.getOrderType().code)
-            .totalAmount(target.getTotalAmount())
+            .totalAmount(target.getTotalAmount().multiply(new BigDecimal(100)).intValue())
             .expiredTime(new DateTime(new Date()).plusMinutes(15).toDate())
             .createTime(new Date())
             .updateTime(new Date())
