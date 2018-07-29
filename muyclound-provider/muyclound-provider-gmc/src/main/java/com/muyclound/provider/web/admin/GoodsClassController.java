@@ -1,9 +1,9 @@
 package com.muyclound.provider.web.admin;
 
+import com.muyclound.model.OperationResponse;
 import com.muyclound.provider.model.dto.SaveGoodsClassDTO;
 import com.muyclound.provider.model.entity.GoodsClassDO;
 import com.muyclound.provider.model.vo.LoadGoodsClassVO;
-import com.muyclound.provider.model.vo.SaveGoodsClassVO;
 import com.muyclound.provider.service.GoodsClassService;
 import com.muyclound.wrapper.WrapMapper;
 import com.muyclound.wrapper.Wrapper;
@@ -36,12 +36,10 @@ public class GoodsClassController {
    */
   @PostMapping(value = "/admin/goods.class/save")
   @ResponseBody
-  public Wrapper<SaveGoodsClassVO> saveGoodsClass(@RequestBody SaveGoodsClassDTO target) {
-    GoodsClassDO goodsClass = goodsClassService.save(target);
+  public Wrapper<OperationResponse> saveGoodsClass(@RequestBody SaveGoodsClassDTO target) {
+    boolean result = goodsClassService.save(target);
 
-    SaveGoodsClassVO rsp = goodsClass.parse(SaveGoodsClassVO.class);
-
-    return WrapMapper.ok(rsp);
+    return WrapMapper.ok(result);
   }
 
   /**
@@ -52,7 +50,7 @@ public class GoodsClassController {
    */
   @PostMapping(value = "/admin/goods.class/delete")
   @ResponseBody
-  public Wrapper<Boolean> saveGoodsClass(String classCode) {
+  public Wrapper<OperationResponse> deleteGoodsClass(String classCode) {
     boolean result = goodsClassService.delete(classCode);
 
     return WrapMapper.ok(result);
@@ -64,7 +62,7 @@ public class GoodsClassController {
    * @param classCode
    * @return
    */
-  @GetMapping(value = "/admin/goods.class/{classCode}")
+  @GetMapping(value = "/admin/goods/class/{classCode}")
   @ResponseBody
   public Wrapper<LoadGoodsClassVO> loadGoodsClass(@PathVariable(value = "classCode") String classCode) {
     GoodsClassDO goodsClass = goodsClassService.load(classCode);

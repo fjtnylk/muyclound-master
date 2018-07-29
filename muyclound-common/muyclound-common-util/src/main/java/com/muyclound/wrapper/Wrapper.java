@@ -26,7 +26,7 @@ public class Wrapper<T> implements Serializable {
 
   private int code;
   private String message;
-  private T result;
+  private T response;
 
   public Wrapper() {
     this(SUCCESS_CODE, SUCCESS_MESSAGE);
@@ -38,7 +38,7 @@ public class Wrapper<T> implements Serializable {
 
   public Wrapper(int code, String message, T result) {
     super();
-    this.code(code).message(message).result(result);
+    this.code(code).message(message).response(result);
   }
 
   private Wrapper<T> code(int code) {
@@ -51,8 +51,8 @@ public class Wrapper<T> implements Serializable {
     return this;
   }
 
-  public Wrapper<T> result(T result) {
-    this.setResult(result);
+  public Wrapper<T> response(T result) {
+    this.setResponse(result);
     return this;
   }
 

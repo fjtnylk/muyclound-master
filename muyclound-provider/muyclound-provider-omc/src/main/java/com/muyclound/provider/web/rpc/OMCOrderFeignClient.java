@@ -6,12 +6,10 @@ import com.muyclound.provider.model.PageQueryOrderModel;
 import com.muyclound.provider.model.PlaceOrderModel;
 import com.muyclound.provider.model.entity.OrderDO;
 import com.muyclound.provider.response.CannelOrderResponse;
-import com.muyclound.provider.response.PageQueryOrderResponse;
 import com.muyclound.provider.response.PlaceOrderResponse;
 import com.muyclound.provider.response.QueryOrderResponse;
 import com.muyclound.provider.service.OMCOrderFeignApi;
 import com.muyclound.provider.service.OrderService;
-import com.muyclound.wrapper.PageWrapper;
 import com.muyclound.wrapper.WrapMapper;
 import com.muyclound.wrapper.Wrapper;
 import javax.annotation.Resource;
@@ -67,9 +65,7 @@ public class OMCOrderFeignClient implements OMCOrderFeignApi {
   public Wrapper<PageResponse> queryOrder(PageQueryOrderModel model) {
     Page<OrderDO> page = orderService.loadPage(model);
 
-    PageResponse response = PageWrapper.wrap(page);
-
-    return WrapMapper.ok(response);
+    return WrapMapper.ok(page);
   }
 
   /**

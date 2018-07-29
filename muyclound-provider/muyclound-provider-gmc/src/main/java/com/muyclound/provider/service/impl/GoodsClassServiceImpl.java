@@ -23,12 +23,10 @@ public class GoodsClassServiceImpl implements GoodsClassService {
    * @return
    */
   @Override
-  public GoodsClassDO save(SaveGoodsClassDTO target) {
+  public boolean save(SaveGoodsClassDTO target) {
     GoodsClassDO goodsClass = target.parse(GoodsClassDO.class);
 
-    goodsClassRepository.insertOrUpdate(goodsClass);
-
-    return goodsClass;
+    return goodsClassRepository.insertOrUpdate(goodsClass);
   }
 
   /**

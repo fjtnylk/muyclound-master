@@ -14,7 +14,7 @@ public interface GoodsClassService {
    * @param target
    * @return
    */
-  GoodsClassDO save(SaveGoodsClassDTO target);
+  boolean save(SaveGoodsClassDTO target);
 
   /**
    * 删除分类.
