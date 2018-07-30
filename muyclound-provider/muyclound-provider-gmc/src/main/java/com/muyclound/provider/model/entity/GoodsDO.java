@@ -5,10 +5,11 @@ import com.baomidou.mybatisplus.annotations.TableId;
 import com.baomidou.mybatisplus.annotations.TableName;
 import com.muyclound.model.MUYObject;
 import java.util.Date;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
 import lombok.Data;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotBlank;
-import org.hibernate.validator.constraints.Range;
 
 /**
  * Created by yanglikai on 2018/7/27.
@@ -25,10 +26,12 @@ public class GoodsDO extends MUYObject {
   @Length(max = 64)
   @TableField(value = "goods_name")
   private String goodsName;  // 商品名称
-  @Length(max = 2)
+  @Min(value = 10)
+  @Max(value = 20)
   @TableField(value = "goods_type")
   private Integer goodsType; // 商品类型(10-普通商品、20-促销商品)
-  @Length(max = 1)
+  @Min(value = 0)
+  @Max(value = 1)
   @TableField(value = "status")
   private Integer status;    // 商品状态(0-上架、1-下架)
   @Length(max = 12)

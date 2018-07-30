@@ -1,15 +1,15 @@
 package com.muyclound.wrapper;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import java.io.Serializable;
 import lombok.Data;
-import org.codehaus.jackson.map.annotate.JsonSerialize;
 
 /**
  * Created by yanglikai on 2018/4/10.
  */
 @Data
-@JsonSerialize(include = JsonSerialize.Inclusion.NON_NULL)
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Wrapper<T> implements Serializable {
   public static final int SUCCESS_CODE = 200;
 
