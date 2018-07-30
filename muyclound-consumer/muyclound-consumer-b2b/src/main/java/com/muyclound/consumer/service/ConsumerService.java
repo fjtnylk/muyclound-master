@@ -17,7 +17,7 @@ public class ConsumerService {
 
   public String loadMessage(String key) {
     Wrapper<String> result = umcMqMessageFeignApi.loadMessageKey(key);
-    return result.getResult();
+    return result.getResponse();
   }
 
   public String error() {

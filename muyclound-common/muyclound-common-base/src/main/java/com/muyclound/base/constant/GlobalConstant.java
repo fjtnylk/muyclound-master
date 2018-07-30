@@ -9,6 +9,7 @@ public final class GlobalConstant {
 
   public static final String UMC_PROVIDER = "muyclound-provider-umc";
   public static final String OMC_PROVIDER = "muyclound-provider-omc";
+  public static final String GMC_PROVIDER = "muyclound-provider-gmc";
 
   public static final String X_FORWARDED_FOR = "X-Forwarded-For";
   public static final String X_REAL_IP = "X-Real-IP";
@@ -20,6 +21,7 @@ public final class GlobalConstant {
   public static final String LOCALHOST_IP = "127.0.0.1";
   public static final String LOCALHOST_IP_16 = "0:0:0:0:0:0:0:1";
   public static final int MAX_IP_LENGTH = 15;
+  public static final int DEFAULT_PAGE_SIZE = 12;
 
   /**
    * 数值

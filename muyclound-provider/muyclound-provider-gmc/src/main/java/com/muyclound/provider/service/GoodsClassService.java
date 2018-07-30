@@ -1,6 +1,6 @@
 package com.muyclound.provider.service;
 
-import com.muyclound.provider.model.dto.SaveGoodsClassDTO;
+import com.muyclound.provider.model.bo.SaveGoodsClassBO;
 import com.muyclound.provider.model.entity.GoodsClassDO;
 
 /**
@@ -14,7 +14,7 @@ public interface GoodsClassService {
    * @param target
    * @return
    */
-  boolean save(SaveGoodsClassDTO target);
+  boolean save(SaveGoodsClassBO target);
 
   /**
    * 删除分类.

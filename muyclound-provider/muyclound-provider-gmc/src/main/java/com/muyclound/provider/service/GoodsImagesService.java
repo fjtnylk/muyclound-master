@@ -1,6 +1,6 @@
 package com.muyclound.provider.service;
 
-import com.muyclound.provider.model.dto.SaveGoodsImagesDTO;
+import com.muyclound.provider.model.bo.SaveGoodsImagesBO;
 import com.muyclound.provider.model.entity.GoodsImagesDO;
 
 /**
@@ -14,7 +14,7 @@ public interface GoodsImagesService {
    * @param target
    * @return
    */
-  boolean save(SaveGoodsImagesDTO target);
+  boolean save(SaveGoodsImagesBO target);
 
   /**
    * 删除商品图片.

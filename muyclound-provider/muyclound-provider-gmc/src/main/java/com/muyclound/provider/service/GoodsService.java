@@ -1,6 +1,8 @@
 package com.muyclound.provider.service;
 
-import com.muyclound.provider.model.dto.SaveGoodsDTO;
+import com.baomidou.mybatisplus.plugins.Page;
+import com.muyclound.provider.model.bo.PageGoodsBO;
+import com.muyclound.provider.model.bo.SaveGoodsBO;
 import com.muyclound.provider.model.entity.GoodsDO;
 
 /**
@@ -14,7 +16,7 @@ public interface GoodsService {
    * @param target
    * @return
    */
-  boolean save(SaveGoodsDTO target);
+  boolean save(SaveGoodsBO target);
 
   /**
    * 删除商品.
@@ -31,4 +33,12 @@ public interface GoodsService {
    * @return
    */
   GoodsDO load(String goodsCode);
+
+  /**
+   * 分页加载.
+   *
+   * @param target
+   * @return
+   */
+  Page<GoodsDO> loadPage(PageGoodsBO target);
 }

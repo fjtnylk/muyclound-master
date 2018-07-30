@@ -32,7 +32,7 @@ public class SimpleController {
   Wrapper<String> consumer() {
     Wrapper<String> umcResult = umcMqMessageFeignApi.loadMessageKey("");
 
-    return WrapMapper.ok("UMCResult:" + umcResult.getResult());
+    return WrapMapper.ok("UMCResult:" + umcResult.getResponse());
   }
 
   @GetMapping("/log")

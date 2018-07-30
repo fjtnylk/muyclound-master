@@ -1,7 +1,7 @@
 package com.muyclound.provider.service.impl;
 
 import com.baomidou.mybatisplus.mapper.EntityWrapper;
-import com.muyclound.provider.model.dto.SaveGoodsImagesDTO;
+import com.muyclound.provider.model.bo.SaveGoodsImagesBO;
 import com.muyclound.provider.model.entity.GoodsImagesDO;
 import com.muyclound.provider.repository.GoodsImagesRepository;
 import com.muyclound.provider.service.GoodsImagesService;
@@ -23,7 +23,7 @@ public class GoodsImagesServiceImpl implements GoodsImagesService {
    * @return
    */
   @Override
-  public boolean save(SaveGoodsImagesDTO target) {
+  public boolean save(SaveGoodsImagesBO target) {
     GoodsImagesDO goodsImages = target.parse(GoodsImagesDO.class);
 
     return goodsImagesRepository.insertOrUpdate(goodsImages);

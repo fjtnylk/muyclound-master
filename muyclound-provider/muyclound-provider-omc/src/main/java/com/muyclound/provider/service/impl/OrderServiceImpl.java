@@ -60,7 +60,7 @@ public class OrderServiceImpl implements OrderService {
     Page page =
         new Page(
             target.getPage(),
-            target.getPageSize());
+            target.getSize());
 
     Wrapper wrap =
         new EntityWrapper()

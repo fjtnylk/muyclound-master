@@ -2,7 +2,7 @@ package com.muyclound.provider.model.dto;
 
 import com.fasterxml.jackson.databind.PropertyNamingStrategy;
 import com.fasterxml.jackson.databind.annotation.JsonNaming;
-import com.muyclound.provider.model.entity.GoodsInventoryDO;
+import com.muyclound.provider.model.bo.SaveGoodsInventoryBO;
 import lombok.Data;
 
 /**
@@ -10,5 +10,5 @@ import lombok.Data;
  */
 @Data
 @JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy.class)
-public class SaveGoodsInventoryDTO extends GoodsInventoryDO {
+public class SaveGoodsInventoryDTO extends SaveGoodsInventoryBO {
 }

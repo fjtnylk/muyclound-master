@@ -1,5 +1,6 @@
 package com.muyclound.provider.service;
 
+import com.muyclound.provider.model.bo.SaveGoodsInventoryBO;
 import com.muyclound.provider.model.dto.SaveGoodsInventoryDTO;
 import com.muyclound.provider.model.entity.GoodsInventoryDO;
 
@@ -14,7 +15,7 @@ public interface GoodsInventoryService {
    * @param target
    * @return
    */
-  boolean save(SaveGoodsInventoryDTO target);
+  boolean save(SaveGoodsInventoryBO target);
 
   /**
    * 删除商品库存.

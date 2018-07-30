@@ -1,6 +1,9 @@
 package com.muyclound.provider.web.admin;
 
+import com.baomidou.mybatisplus.plugins.Page;
 import com.muyclound.model.OperationResponse;
+import com.muyclound.model.PageResponse;
+import com.muyclound.provider.model.dto.PageGoodsDTO;
 import com.muyclound.provider.model.dto.SaveGoodsDTO;
 import com.muyclound.provider.model.entity.GoodsDO;
 import com.muyclound.provider.model.vo.LoadGoodsVO;
@@ -71,5 +74,19 @@ public class GoodsController {
     LoadGoodsVO rsp = goods.parse(LoadGoodsVO.class);
 
     return WrapMapper.ok(rsp);
+  }
+
+  /**
+   * 商品分页加载.
+   *
+   * @param target
+   * @return
+   */
+  @GetMapping(value = "/admin/goods.page/search")
+  @ResponseBody
+  public Wrapper<PageResponse> loadPageGoods(PageGoodsDTO target) {
+    Page<GoodsDO> page = goodsService.loadPage(target);
+
+    return WrapMapper.ok(page);
   }
 }

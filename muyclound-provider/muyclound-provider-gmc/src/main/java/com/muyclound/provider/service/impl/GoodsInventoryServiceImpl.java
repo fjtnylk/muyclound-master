@@ -1,6 +1,7 @@
 package com.muyclound.provider.service.impl;
 
 import com.baomidou.mybatisplus.mapper.EntityWrapper;
+import com.muyclound.provider.model.bo.SaveGoodsInventoryBO;
 import com.muyclound.provider.model.dto.SaveGoodsInventoryDTO;
 import com.muyclound.provider.model.entity.GoodsInventoryDO;
 import com.muyclound.provider.repository.GoodsInventoryRepository;
@@ -23,7 +24,7 @@ public class GoodsInventoryServiceImpl implements GoodsInventoryService {
    * @return
    */
   @Override
-  public boolean save(SaveGoodsInventoryDTO target) {
+  public boolean save(SaveGoodsInventoryBO target) {
     GoodsInventoryDO goodsInventory = target.parse(GoodsInventoryDO.class);
 
     return

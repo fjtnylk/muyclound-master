@@ -1,7 +1,7 @@
 package com.muyclound.provider.service.impl;
 
 import com.baomidou.mybatisplus.mapper.EntityWrapper;
-import com.muyclound.provider.model.dto.SaveGoodsPriceDTO;
+import com.muyclound.provider.model.bo.SaveGoodsPriceBO;
 import com.muyclound.provider.model.entity.GoodsPriceDO;
 import com.muyclound.provider.repository.GoodsPriceRepository;
 import com.muyclound.provider.service.GoodsPriceService;
@@ -23,7 +23,7 @@ public class GoodsPriceServiceImpl implements GoodsPriceService {
    * @return
    */
   @Override
-  public boolean save(SaveGoodsPriceDTO target) {
+  public boolean save(SaveGoodsPriceBO target) {
     GoodsPriceDO goodsPrice = target.parse(GoodsPriceDO.class);
 
     return

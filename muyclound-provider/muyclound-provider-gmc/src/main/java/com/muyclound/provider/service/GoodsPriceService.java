@@ -1,5 +1,6 @@
 package com.muyclound.provider.service;
 
+import com.muyclound.provider.model.bo.SaveGoodsPriceBO;
 import com.muyclound.provider.model.dto.SaveGoodsPriceDTO;
 import com.muyclound.provider.model.entity.GoodsPriceDO;
 
@@ -14,7 +15,7 @@ public interface GoodsPriceService {
    * @param target
    * @return
    */
-  boolean save(SaveGoodsPriceDTO target);
+  boolean save(SaveGoodsPriceBO target);
 
   /**
    * 删除商品价格.
