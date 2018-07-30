@@ -10,6 +10,7 @@ import com.muyclound.wrapper.Wrapper;
 import javax.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.MediaType;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -36,7 +37,7 @@ public class GoodsController {
    */
   @PostMapping(value = "/admin/goods/save")
   @ResponseBody
-  public Wrapper<OperationResponse> saveGoods(@RequestBody SaveGoodsDTO target) {
+  public Wrapper<OperationResponse> saveGoods(@Validated @RequestBody SaveGoodsDTO target) {
     boolean result = goodsService.save(target);
 
     return WrapMapper.ok(result);

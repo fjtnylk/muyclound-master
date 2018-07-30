@@ -8,6 +8,7 @@ import com.muyclound.wrapper.Wrapper;
 import java.nio.file.AccessDeniedException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
@@ -29,7 +30,21 @@ public class GlobalExceptionHandler {
   @ResponseBody
   public Wrapper illegalArgumentException(IllegalArgumentException e) {
     log.error("参数非法异常={}", e.getMessage(), e);
-    return WrapMapper.wrap(ErrorCodeEnum.GL99990400.code(), e.getMessage());
+    return WrapMapper.wrap(ErrorCodeEnum.GL99990400.code(), ErrorCodeEnum.GL99990400.msg());
+  }
+
+  /**
+   * 参数效验异常.
+   *
+   * @param e the e
+   * @return the wrapper
+   */
+  @ExceptionHandler(MethodArgumentNotValidException.class)
+  @ResponseStatus(HttpStatus.OK)
+  @ResponseBody
+  public Wrapper methodArgumentNotValidException(MethodArgumentNotValidException e) {
+    log.info("参数效验异常 ex={}", e.getMessage(), e);
+    return WrapMapper.wrap(ErrorCodeEnum.GL99990400.code(), ErrorCodeEnum.GL99990400.msg());
   }
 
   /**
@@ -59,7 +74,6 @@ public class GlobalExceptionHandler {
     log.error("业务异常={}", e.getMessage(), e);
     return WrapMapper.wrap(ErrorCodeEnum.GL99990401.code(), ErrorCodeEnum.GL99990401.msg());
   }
-
 
   /**
    * 全局异常.
