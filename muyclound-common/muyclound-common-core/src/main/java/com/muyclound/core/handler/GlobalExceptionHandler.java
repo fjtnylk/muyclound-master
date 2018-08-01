@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
+import org.springframework.web.servlet.NoHandlerFoundException;
 
 
 @Slf4j
@@ -26,7 +27,6 @@ public class GlobalExceptionHandler {
    * @return the wrapper
    */
   @ExceptionHandler(IllegalArgumentException.class)
-  @ResponseStatus(HttpStatus.OK)
   @ResponseBody
   public Wrapper illegalArgumentException(IllegalArgumentException e) {
     log.error("参数非法异常={}", e.getMessage(), e);
@@ -40,7 +40,6 @@ public class GlobalExceptionHandler {
    * @return the wrapper
    */
   @ExceptionHandler(MethodArgumentNotValidException.class)
-  @ResponseStatus(HttpStatus.OK)
   @ResponseBody
   public Wrapper methodArgumentNotValidException(MethodArgumentNotValidException e) {
     log.info("参数效验异常 ex={}", e.getMessage(), e);
@@ -54,7 +53,6 @@ public class GlobalExceptionHandler {
    * @return the wrapper
    */
   @ExceptionHandler(BizException.class)
-  @ResponseStatus(HttpStatus.OK)
   @ResponseBody
   public Wrapper businessException(BizException e) {
     log.error("业务异常={}", e.getMessage(), e);
@@ -68,11 +66,21 @@ public class GlobalExceptionHandler {
    * @return the wrapper
    */
   @ExceptionHandler(AccessDeniedException.class)
-  @ResponseStatus(HttpStatus.UNAUTHORIZED)
   @ResponseBody
   public Wrapper unAuthorizedException(AccessDeniedException e) {
-    log.error("业务异常={}", e.getMessage(), e);
     return WrapMapper.wrap(ErrorCodeEnum.GL99990401.code(), ErrorCodeEnum.GL99990401.msg());
+  }
+
+  /**
+   * 无访问资源.
+   *
+   * @param e
+   * @return
+   */
+  @ExceptionHandler(NoHandlerFoundException.class)
+  @ResponseBody
+  public Wrapper noHandlerFoundException(NoHandlerFoundException e) {
+    return WrapMapper.wrap(ErrorCodeEnum.GL99990404.code(), ErrorCodeEnum.GL99990404.msg());
   }
 
   /**

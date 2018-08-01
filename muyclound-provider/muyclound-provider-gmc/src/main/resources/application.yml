@@ -7,10 +7,13 @@ spring:
     proxy-target-class: true
   mvc:
     date-format: yyyy-MM-dd HH:mm:ss
+    throw-exception-if-no-handler-found: true
   jackson:
     joda-date-time-format: yyyy-MM-dd HH:mm:ss
     date-format: yyyy-MM-dd HH:mm:ss
     time-zone: GMT+8
+  resources:
+    add-mappings: false
 
 sharding:
   jdbc:
